@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: lambda_dynamodb_session_auth
+
+Resources:
+  CreateUserSessionFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: create-session
+      Handler: index.lambdaHandler
+      Runtime: nodejs12.x
+  GetSessionInfoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: get-session-info
+      Handler: index.lambdaHandler
+      Runtime: nodejs12.x
+  DeactivateSessionFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: deactivate-session
+      Handler: index.lambdaHandler
+      Runtime: nodejs12.x
